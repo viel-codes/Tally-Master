@@ -1,181 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".addNewTally">
 
-  <TextView
-      android:id="@+id/textview1"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="28dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="216dp"
-      android:text="Counter Name"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <EditText
-      android:id="@+id/txt_counter_name"
-      android:layout_width="355dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="28dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="33dp"
-      android:background="@drawable/round_border"
-      android:ems="10"
-      android:hint="What are you counting?"
-      android:inputType="textPersonName"
-      android:padding="16dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textview1" />
-
-  <TextView
-      android:id="@+id/textview2"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Counter Goal"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.096"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txt_counter_name" />
-
-  <EditText
-      android:id="@+id/txt_counter_goal"
-      android:layout_width="355dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:background="@drawable/round_border"
-      android:ems="10"
-      android:hint="What are your counter's goal?"
-      android:inputType="textPersonName"
-      android:padding="16dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textview2" />
-
-  <TextView
-      android:id="@+id/textview3"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Increment Count"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.103"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txt_counter_goal" />
-
-  <EditText
-      android:id="@+id/txt_counter_increment"
-      android:layout_width="355dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:background="@drawable/round_border"
-      android:ems="10"
-      android:hint="What are your counter's goal?"
-      android:inputType="textPersonName"
-      android:padding="16dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textview3" />
-
-  <TextView
-      android:id="@+id/textview4"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:text="Color Palette"
-      android:textSize="24sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.089"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/txt_counter_increment" />
-
-  <TableLayout
+  <RelativeLayout
+      android:id="@+id/title_bar_layout"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:gravity="center"
-      android:padding="20dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textview4">
+      android:background="#EAD7BB"
+      android:padding="6dp">
 
-    <TableRow
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="Add New Tally"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/save_tally_btn"
+        android:layout_width="42dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/done"
+        app:tint="@color/black" />
+
+  </RelativeLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="216dp"
+        android:text="Counter Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <EditText
+        android:id="@+id/txt_counter_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:hint="What are you counting?"
+        android:inputType="textPersonName"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview1" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="28dp"
+        android:text="Counter Goal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_counter_name" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <EditText
+        android:id="@+id/txt_counter_goal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:hint="What are your counter's goal?"
+        android:inputType="number"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview2" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="28dp"
+        android:text="Increment Count"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_counter_goal" />
+
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <EditText
+        android:id="@+id/txt_counter_increment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/round_border"
+        android:ems="10"
+        android:hint="What are your counter's goal?"
+        android:inputType="number"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview3" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="4dp">
+
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="28dp"
+        android:text="Color Palette"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_counter_increment" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="10dp">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:orientation="horizontal">
+
+      <ImageButton
+          android:id="@+id/coloroption1_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption1_pink"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption2_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption2_blue"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption3_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption3_purple"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption4_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption4_yellow"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption5_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption5_green"
+          app:srcCompat="@drawable/color_option_btn" />
 
 
-      <Button
-          android:id="@+id/colorOption1"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption1_pink"
-          android:backgroundTint="@color/colorOption1_pink"
-          android:shape="oval" />
-
-      <Button
-          android:id="@+id/colorOption2"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption2_blue"
-          android:backgroundTint="@color/colorOption2_blue"
-          android:shape="oval" />
-
-      <Button
-          android:id="@+id/colorOption3"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption3_purple"
-          android:shape="oval" />
-
-    </TableRow>
-
-    <TableRow android:gravity="center">
-
-      <Button
-          android:id="@+id/colorOption4"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption4_yellow"
-          android:shape="oval" />
-
-      <Button
-          android:id="@+id/colorOption5"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption5_green"
-          android:shape="oval" />
-
-      <Button
-          android:id="@+id/colorOption6"
-          android:layout_width="60dp"
-          android:layout_height="60dp"
-          android:layout_margin="5dp"
-          android:background="@color/colorOption6_ocean"
-          android:shape="oval" />
-    </TableRow>
-
-  </TableLayout>
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+      <ImageButton
+          android:id="@+id/coloroption6_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption6_ocean"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption7_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption7_sage"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption8_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption8_mustard"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption9_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption9_red"
+          app:srcCompat="@drawable/color_option_btn" />
+
+      <ImageButton
+          android:id="@+id/coloroption10_id"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="?attr/selectableItemBackgroundBorderless"
+          android:tint="@color/colorOption10_magenta"
+          app:srcCompat="@drawable/color_option_btn" />
+
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+</LinearLayout>
 

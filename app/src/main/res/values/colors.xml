@@ -6,15 +6,21 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="black_defaultcolor">#4D636363</color>
     <color name="white">#FFFFFFFF</color>
     <color name="darkViolet">#461959</color>
+    <color name="beige">#59B99470</color>
     
     //Color options
     <color name="colorOption1_pink">#FBACCC</color>
     <color name="colorOption2_blue">#C0DEFF</color>
     <color name="colorOption3_purple">#ADA2FF</color>
-    <color name="colorOption4_yellow">#FFF8E1</color>
+    <color name="colorOption4_yellow">#FFFB73</color>
     <color name="colorOption5_green">#C6EF34</color>
     <color name="colorOption6_ocean">#279EFF</color>
+    <color name="colorOption7_sage">#D2E3C8</color>
+    <color name="colorOption8_mustard">#FFCD4B</color>
+    <color name="colorOption9_red">#E0144C</color>
+    <color name="colorOption10_magenta">#C4129D</color>
 
 </resources>
