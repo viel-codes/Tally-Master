@@ -9,13 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TallyMaster"
+        android:theme="@style/Theme.Material3.DayNight"
         tools:targetApi="31">
         <activity
-            android:name=".add_counter"
-            android:exported="false" />
-        <activity
-            android:name=".AddTally"
+            android:name=".addNewTally"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

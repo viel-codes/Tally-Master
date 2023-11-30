@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addNewTally">
+
+  <TextView
+      android:id="@+id/textview1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="28dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="216dp"
+      android:text="Counter Name"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <EditText
+      android:id="@+id/txt_counter_name"
+      android:layout_width="355dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="28dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="33dp"
+      android:background="@drawable/round_border"
+      android:ems="10"
+      android:hint="What are you counting?"
+      android:inputType="textPersonName"
+      android:padding="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textview1" />
+
+  <TextView
+      android:id="@+id/textview2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Counter Goal"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.096"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/txt_counter_name" />
+
+  <EditText
+      android:id="@+id/txt_counter_goal"
+      android:layout_width="355dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/round_border"
+      android:ems="10"
+      android:hint="What are your counter's goal?"
+      android:inputType="textPersonName"
+      android:padding="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textview2" />
+
+  <TextView
+      android:id="@+id/textview3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Increment Count"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.103"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/txt_counter_goal" />
+
+  <EditText
+      android:id="@+id/txt_counter_increment"
+      android:layout_width="355dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/round_border"
+      android:ems="10"
+      android:hint="What are your counter's goal?"
+      android:inputType="textPersonName"
+      android:padding="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textview3" />
+
+  <TextView
+      android:id="@+id/textview4"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Color Palette"
+      android:textSize="24sp"
+      android:textStyle="bold"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.089"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/txt_counter_increment" />
+
+  <TableLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:padding="20dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textview4">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+      <Button
+          android:id="@+id/colorOption1"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption1_pink"
+          android:backgroundTint="@color/colorOption1_pink"
+          android:shape="oval" />
+
+      <Button
+          android:id="@+id/colorOption2"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption2_blue"
+          android:backgroundTint="@color/colorOption2_blue"
+          android:shape="oval" />
+
+      <Button
+          android:id="@+id/colorOption3"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption3_purple"
+          android:shape="oval" />
+
+    </TableRow>
+
+    <TableRow android:gravity="center">
+
+      <Button
+          android:id="@+id/colorOption4"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption4_yellow"
+          android:shape="oval" />
+
+      <Button
+          android:id="@+id/colorOption5"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption5_green"
+          android:shape="oval" />
+
+      <Button
+          android:id="@+id/colorOption6"
+          android:layout_width="60dp"
+          android:layout_height="60dp"
+          android:layout_margin="5dp"
+          android:background="@color/colorOption6_ocean"
+          android:shape="oval" />
+    </TableRow>
+
+  </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

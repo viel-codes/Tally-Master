@@ -2,13 +2,15 @@ package com.labactivity.tallymaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    FloatingActionButton floatingaction_btn;
+    FloatingActionButton v_floatingaction_btn;
 
 
     @Override
@@ -16,7 +18,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        floatingaction_btn = findViewById(R.id.float_add_tally);
+        v_floatingaction_btn = findViewById(R.id.float_add_tally);
+
+        v_floatingaction_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),addNewTally.class));
+
+
+            }
+        });
 
 
     }
