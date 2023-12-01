@@ -1,0 +1,31 @@
+{
+  "project_info": {
+    "project_number": "346407698482",
+    "project_id": "tallymaster-9bb8b",
+    "storage_bucket": "tallymaster-9bb8b.appspot.com",
+	"firebase_url": "https://tallymaster-807eb-default-rtdb.firebaseio.com/"
+
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346407698482:android:24125e9705b788b6f1fc2b",
+        "android_client_info": {
+          "package_name": "com.labactivity.tallymaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOk599bOy0idTuy5I5tQ56Y_tujVdnvhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

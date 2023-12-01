@@ -63,21 +63,16 @@ public class addNewTally extends AppCompatActivity {
                 data_hashmap.put("c_goal", goal_is);
                 data_hashmap.put("d_increment", increment_is);
 
-
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference tbl_reference = database.getReference("tally");
 
-
                 String idkey = tbl_reference.push().getKey();
-                data_hashmap.put("a_idno", idkey);
+                data_hashmap.put("a_idno",idkey);
 
                 tbl_reference.child(idkey).setValue(data_hashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(addNewTally.this, "Tally Saved!", Toast.LENGTH_SHORT).show();
-                        TallyNametxt.getText().clear();
-                        TallyGoaltxt.getText().clear();
-                        TallyIncrement.getText().clear();
+                        Toast.makeText(addNewTally.this, "Tally Saved", Toast.LENGTH_SHORT).show();
                     }
                 });
 
