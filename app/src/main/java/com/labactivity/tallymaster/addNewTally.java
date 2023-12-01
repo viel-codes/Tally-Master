@@ -1,13 +1,18 @@
 package com.labactivity.tallymaster;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +25,11 @@ import java.util.HashMap;
 public class addNewTally extends AppCompatActivity {
 
     EditText TallyNametxt, TallyGoaltxt, TallyIncrement;
-    ImageButton saveTally;
+    ImageButton saveTally, cancelTally;
+
+    LinearLayout layout_cardview;
+
+    ImageButton color1,color2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +40,10 @@ public class addNewTally extends AppCompatActivity {
         TallyGoaltxt = findViewById(R.id.txt_counter_goal);
         TallyIncrement = findViewById(R.id.txt_counter_increment);
         saveTally = findViewById(R.id.save_tally_btn);
+        cancelTally = findViewById(R.id.cancel_tally_btn);
+
+        layout_cardview = findViewById(R.id.layout_cardview_id);
+
 
         saveTally.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +59,7 @@ public class addNewTally extends AppCompatActivity {
                 } else if (increment_is.isEmpty()) {
                     TallyIncrement.setError("Tally Increment is required");
                 } else {
+
                     f_insert_record(name_is, goal_is, increment_is);
 
                     Intent intent = new Intent(addNewTally.this, MainActivity.class);
@@ -73,6 +87,9 @@ public class addNewTally extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(addNewTally.this, "Tally Saved", Toast.LENGTH_SHORT).show();
+                        TallyNametxt.getText().clear();
+                        TallyGoaltxt.getText().clear();
+                        TallyIncrement.getText().clear();
                     }
                 });
 
@@ -80,5 +97,16 @@ public class addNewTally extends AppCompatActivity {
             }
         });
 
+        cancelTally.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
+
+
     }
+
 }
