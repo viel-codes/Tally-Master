@@ -29,7 +29,9 @@ public class addNewTally extends AppCompatActivity {
 
     LinearLayout layout_cardview;
 
-    ImageButton color1,color2;
+    ImageButton color1, color2, color3, color4, color5, color6, color7, color8, color9, color10;
+
+    private int selectedColor = 0; // Default color
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,98 @@ public class addNewTally extends AppCompatActivity {
         saveTally = findViewById(R.id.save_tally_btn);
         cancelTally = findViewById(R.id.cancel_tally_btn);
 
-        layout_cardview = findViewById(R.id.layout_cardview_id);
+        color1 = findViewById(R.id.coloroption1_id);
+        color2 = findViewById(R.id.coloroption2_id);
+        color3 = findViewById(R.id.coloroption3_id);
+        color4 = findViewById(R.id.coloroption4_id);
+        color5 = findViewById(R.id.coloroption5_id);
+        color6 = findViewById(R.id.coloroption6_id);
+        color7 = findViewById(R.id.coloroption7_id);
+        color8 = findViewById(R.id.coloroption8_id);
+        color9 = findViewById(R.id.coloroption9_id);
+        color10 = findViewById(R.id.coloroption10_id);
+
+
+        color1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption1_pink); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption2_blue); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption3_purple); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption4_yellow); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption5_green); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption6_ocean); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption7_sage); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption8_mustard); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption9_red); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
+        color10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedColor = getColor(R.color.colorOption10_magenta); // Replace with your color resource
+                applySelectedColor();
+            }
+        });
+
 
 
         saveTally.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +154,8 @@ public class addNewTally extends AppCompatActivity {
                 } else {
 
                     f_insert_record(name_is, goal_is, increment_is);
+
+                    applySelectedColor();
 
                     Intent intent = new Intent(addNewTally.this, MainActivity.class);
                     startActivity(intent);
@@ -106,6 +201,14 @@ public class addNewTally extends AppCompatActivity {
         });
 
 
+
+    }
+
+    private void applySelectedColor() {
+
+        TallyNametxt.setTextColor(selectedColor);
+        TallyGoaltxt.setTextColor(selectedColor);
+        TallyIncrement.setTextColor(selectedColor);
 
     }
 
